@@ -7,9 +7,9 @@
 
  sed '/^.\{65\}/s/./& /g' circle.xpm
 
-
  # substitute "foo" with "bar" ONLY for lines which contain "baz"
  sed '/baz/s/foo/bar/g' 
 
-
+ # CONVERT IMAGE TO MONOCHROME AND RESIZE
+ convert -resize 200 -monochrome in.jpg out.xpm 
 
