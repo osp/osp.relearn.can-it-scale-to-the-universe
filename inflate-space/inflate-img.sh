@@ -10,7 +10,6 @@
 #          cut -d " " -f 3 | \
 #          cut -d "x" -f 1`
 
-
   convert -resize $OWIDTH -monochrome $IIMG $OIMG
 
 # REPLACE SPACES WITH PLACEHOLDER
@@ -27,7 +26,6 @@
 
 # REPLACE OLD IMG WIDTH WITH NEW (FIRST INSTANCE!)
   sed -i "s/$OWIDTH/$INFLATEDWIDTH/" $OIMG
-
 
 
 exit 0;
