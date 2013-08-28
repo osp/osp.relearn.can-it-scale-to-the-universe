@@ -1,0 +1,12 @@
+Nous avons pris une image (into the public domain by Pearson Scott Foresman) d'une empreinte digitale. On a réduit la qualité de l'image pour suprimer les détails indésirables. Dans le même répertoire de l'image, on a créé un fichier .sh contenant un script Autotrace :
+
+	autotrace -background-color=FFFFFF \
+          -color-count 2 \
+          -centerline \
+          -output-file=$2 \
+          $1
+
+Enfin avec le terminal on a exécuter le script: 
+
+bash trace.sh Fingerprint.png finger.pdf
+
