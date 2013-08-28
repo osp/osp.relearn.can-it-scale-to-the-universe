@@ -32,7 +32,7 @@ old_time = trkpt.find('{%s}time' % NS).text
 old_time = datetime.datetime.strptime(old_time, "%Y-%m-%dT%H:%M:%SZ")
 
 hpgl += "IP%s,%s;\n" % (str(old_lon).replace('.', ','), str(old_lon).replace('.', ','))
-hpgl += "SC1488,0,0,1052;\n"
+hpgl += "SC0,0,16158,11040;\n"
 hpgl += "SP1;\n"
 
 
@@ -49,7 +49,7 @@ for trkpt in trkpts[1:]:
     ac = math.sqrt(ab**2 + bc**2)
 
     time_delta = time - old_time
-    hpgl += "VS%s,%s;\n" % (time_delta.seconds, time_delta.microseconds)
+    hpgl += "VS%s;\n" % time_delta.seconds
     hpgl += "PA%s,%s;\n" % (str(lon).replace('.', ','), str(lat).replace('.', ','))
 
     old_lat = lat
