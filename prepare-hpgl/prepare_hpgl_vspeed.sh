@@ -76,6 +76,8 @@
  # -------------------------------------------------------------------------- #
 
   # REPLACE PD WITH PD AND A RANDOM SPEED
+
+    COUNT=1
  
     for PD in `grep -n PD $HPGL`
      do
@@ -83,10 +85,13 @@
         echo $LINENUMBER
  
         VS=$((RANDOM%41+1))
- 
+        VS=$COUNT 
+
         echo $VS
         sed -i "${LINENUMBER}s/PD/&;VS${VS}/g" $HPGL
  
+        COUNT=`expr $COUNT + 2`
+
     done
 
 
