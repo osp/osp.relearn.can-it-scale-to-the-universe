@@ -1,0 +1,15 @@
+ # ADD A SPACE AFTER EACH CHARACTER 
+ # (=REPLACE ALL CHARACTERS WITH ITSELF AND A SPACE)
+
+ sed 's/./& /g' circle.xpm
+
+ # IF THEY ARE LONGER THAN 65 CHARACTERS
+
+ sed '/^.\{65\}/s/./& /g' circle.xpm
+
+
+ # substitute "foo" with "bar" ONLY for lines which contain "baz"
+ sed '/baz/s/foo/bar/g' 
+
+
+
