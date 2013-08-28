@@ -64,13 +64,13 @@
  
  # -------------------------------------------------------------------------- #
    #echo "SP1;"   >> $HPGL
-   #cat hpgl.hpgl >> $HPGL
+   cat hpgl.hpgl >> $HPGL
 
- # RANDOMIZE LINES (PREVENT FLOATING COLOR) 
-   cat hpgl.hpgl | \
-   sed 's/PU;/PU;\n/g' | \
-   sed '/./{H;d;};x;s/\n/={NL}=/g' | \
-   shuf | sed '1s/={NL}=//;s/={NL}=/\n/g'     >> $HPGL
+# # RANDOMIZE LINES (PREVENT FLOATING COLOR) 
+#   cat hpgl.hpgl | \
+#   sed 's/PU;/PU;\n/g' | \
+#   sed '/./{H;d;};x;s/\n/={NL}=/g' | \
+#   shuf | sed '1s/={NL}=//;s/={NL}=/\n/g'     >> $HPGL
 
    echo "SP0;"                                >> $HPGL
  # -------------------------------------------------------------------------- #
