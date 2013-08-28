@@ -39,7 +39,7 @@
    # SC xmin,xmax,ymin,ymax;
    echo "SC1488,0,0,1052;"     >> $HPGL
    echo "SP1;"                 >> $HPGL
-   echo "VS2;"                 >> $HPGL
+   echo "VS42;"                 >> $HPGL
 
 
    echo $SVG4HPGLLINES > svg.i
@@ -76,7 +76,7 @@
  # -------------------------------------------------------------------------- #
 
    # DEBUG  
-   cp $SVG4HPGLLINES `basename $SVG4HPGLLINES` 
+   #cp $SVG4HPGLLINES `basename $SVG4HPGLLINES` 
    rm hpgl.hpgl ${SVG%%.*}_* $SVG4HPGLLINES 
 
 

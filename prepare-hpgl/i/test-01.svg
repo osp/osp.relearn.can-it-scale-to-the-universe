@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1052.3622"
-   height="1488.189"
+   width="1488.189"
+   height="1052.3622"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="test-01.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.22014865"
-     inkscape:cx="-549.45794"
-     inkscape:cy="850.70131"
+     inkscape:zoom="0.37152748"
+     inkscape:cx="400.274"
+     inkscape:cy="541.43143"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false" />
@@ -38,7 +38,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -46,10 +46,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,435.82679)">
+     transform="translate(0,7.7734376e-6)">
     <path
        style="color:#000000;fill:none;stroke:#ff0000;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 825.97852,308.26769 c 0,165.57355 -134.22388,299.79743 -299.79743,299.79743 -165.57354,0 -299.79742,-134.22388 -299.79742,-299.79743 0,-165.57354 134.22388,-299.7974226 299.79742,-299.7974226 165.57355,0 299.79743,134.2238826 299.79743,299.7974226 z"
+       d="m 1043.8919,526.18108 c 0,165.57355 -134.22387,299.79743 -299.79742,299.79743 -165.57354,0 -299.79742,-134.22388 -299.79742,-299.79743 0,-165.57354 134.22388,-299.79742 299.79742,-299.79742 165.57355,0 299.79742,134.22388 299.79742,299.79742 z"
        id="path2985"
        inkscape:connector-curvature="0" />
   </g>
