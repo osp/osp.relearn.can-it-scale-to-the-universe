@@ -1,8 +1,11 @@
 IN;IP0,0,4000,4000;SC0,100,0,100;
 SP1;
-PU;PA0,0;
+PU;
+PA0,0;
 DT$,2;
-SI0.9,2;
-LBDrive me ETX	
+SI1,2;
+LBPlease write$	
 SP2;
-LB         to  the    moon
+PU;
+PA0,50;
+LBon two lines$

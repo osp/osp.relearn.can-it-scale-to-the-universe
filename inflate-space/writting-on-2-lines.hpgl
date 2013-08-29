@@ -1,0 +1,11 @@
+IN;
+IP0,0,16158,11040;
+SC1488,0,0,1052;
+SP2;
+PU;PA100,100;
+DT$,3;
+SI2,3;
+LBWrite me ETX	
+SP2;
+LB2lines                     
+
