@@ -43,23 +43,14 @@
 
       fi
  
-#      INBETWEEN=`echo $INBETWEEN | \
-#                 sed 's/./&\n/g' | \
-#                 shuf -n $SELECT | \
-#                 sed ':a;N;$!ba;s/\n//g'`
-
        INBETWEEN=`echo $INBETWEEN | \
                   sed 's/./&\n/g' | \
                   sed 'n;d;' | \
                   sed ':a;N;$!ba;s/\n//g'`
 
-
-
-  
       WORD=${FIRSTCHAR}${INBETWEEN}${LASTCHAR}
 
       TEXT=${TEXT}" "${WORD}
-
  done
 
  echo $TEXT | \

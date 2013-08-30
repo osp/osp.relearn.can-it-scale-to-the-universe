@@ -21,7 +21,6 @@
   sed -i 's/Z M [^"]*"/"/g' ${SRCSVG%%.*}_CONFORM.svg
 
   SVG4HPGLLINES=i/`basename ${SRCSVG%%.*}_CONFORM.svg`
-  mv ${SRCSVG%%.*}_CONFORM.svg $SVG4HPGLLINES
 # -------------------------------------------------------------- #
 
 
@@ -39,7 +38,7 @@
    # SC xmin,xmax,ymin,ymax;
    echo "SC1488,0,0,1052;"     >> $HPGL
    echo "SP1;"                 >> $HPGL
-   echo "VS42;"                 >> $HPGL
+   echo "VS1;"                >> $HPGL
 
 
    echo $SVG4HPGLLINES > svg.i
@@ -70,14 +69,16 @@
    cat hpgl.hpgl | \
    sed 's/PU;/PU;\n/g' | \
    sed '/./{H;d;};x;s/\n/={NL}=/g' | \
-   shuf | sed '1s/={NL}=//;s/={NL}=/\n/g'               >> $HPGL
+   shuf | sed '1s/={NL}=//;s/={NL}=/\n/g'     >> $HPGL
 
-   echo "SP0;"   >> $HPGL
+   echo "SP0;"                                >> $HPGL
  # -------------------------------------------------------------------------- #
 
-   # DEBUG  
-   #cp $SVG4HPGLLINES `basename $SVG4HPGLLINES` 
-   rm hpgl.hpgl ${SVG%%.*}_* $SVG4HPGLLINES 
+ # CLEAN up
+ # -------------------------------------------------------------------------- #
+ # DEBUG  
+ #cp $SVG4HPGLLINES `basename $SVG4HPGLLINES` 
+ rm hpgl.hpgl ${SVG%%.*}_* 
 
 
 
