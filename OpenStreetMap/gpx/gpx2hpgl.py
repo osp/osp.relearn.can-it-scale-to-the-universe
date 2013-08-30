@@ -9,20 +9,6 @@ de 1 a 42 cms par secondes
 To test out: try to draw an A3 by walking around
 try to use the grid on the floor in front of the house to reproduce drawings
 
-
-"""
-
-
-import datetime
-import math
-import sys
-from lxml import etree
-
-
-NS = 'http://www.topografix.com/GPX/1/0'
-
-
-"""
 +----------+
 |       P2 |
 |       +  |
@@ -33,6 +19,12 @@ NS = 'http://www.topografix.com/GPX/1/0'
 | P1       |
 +----------+
 """
+
+
+import datetime
+import math
+import sys
+from lxml import etree
 
 
 #ISO A3 = 403.95mm x 276mm = 16158 units x 11040 units
@@ -47,19 +39,16 @@ MAX_VELOCITY = 41
 assert (XMAX / WIDTH) == (YMAX / HEIGHT) 
 mm = XMAX / WIDTH  # mm to plotter unit conversion
 
-#XP1
-#YP1
-#XP2
-#YP2
 
 def walk(tree):
-    trkpts = tree.xpath('//gpx:trkpt', namespaces={'gpx': NS})
+    ns = tree.getroot().nsmap[None]
+    trkpts = tree.xpath('//gpx:trkpt', namespaces={'gpx': ns})
 
     for trkpt in trkpts:
         lon = float(trkpt.attrib['lon'])
         lat = float(trkpt.attrib['lat'])
-        ele = trkpt.find('{%s}ele' % NS).text
-        time = trkpt.find('{%s}time' % NS).text
+        ele = trkpt.find('{%s}ele' % ns).text
+        time = trkpt.find('{%s}time' % ns).text
         time = datetime.datetime.strptime(time, "%Y-%m-%dT%H:%M:%SZ")
 
         yield dict(lon=lon, lat=lat, ele=ele, time=time)
@@ -104,7 +93,6 @@ def main(f):
         ac = math.sqrt(ab**2 + bc**2)
         delta = trkpt['time'] - trkpts[i]['time']
 
-
         # From Roland's user manual:
         # Changing Maximum Plotting Speed The DIP switches on the back of the
         # DXY can be used to change the maximum plotting speed. When shipped
@@ -113,7 +101,6 @@ def main(f):
         # plotting speed is 600 mm (23-5/8")/sec (45 degrees orientation).
         velocity = ac / delta.seconds
         velocity = (((velocity - min_velocity) / (max_velocity - min_velocity)) * MAX_VELOCITY) + 1
-        #print(velocity)
 
         hpgl += "VS%s;\n" % velocity
 
@@ -125,9 +112,6 @@ def main(f):
 
         lon = (((trkpt['lon'] - min_lon) / (max_lon - min_lon)) * XMAX) / mm
         lat = (((trkpt['lat'] - min_lat) / (max_lon - min_lon)) * XMAX) / mm
-
-        #lon = int(lon / mm)
-        #lat = int(lat / mm)
 
         hpgl += "PA%s,%s;\n" % (lon, lat)
         hpgl += "\n"
