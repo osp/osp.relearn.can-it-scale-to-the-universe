@@ -1,0 +1,16 @@
+# autotrace -background-color=FFFFFF \
+#           -color-count 2 \
+#           -centerline \
+#           -tangent-surround 100 \
+#           -line-threshold 100 \
+#           -line-reversion-threshold real \
+#           -output-file=$2 \
+#           $1
+#           
+ 
+
+autotrace -background-color=FFFFFF \
+          -color-count 2 \
+          -centerline \
+          -output-file=$2 \
+          $1
